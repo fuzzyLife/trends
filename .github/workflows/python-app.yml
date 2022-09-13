@@ -5,7 +5,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: "35 10 * * *"
+    - cron: "40 10 * * *"
 
 permissions:
   contents: read
@@ -28,10 +28,10 @@ jobs:
     - name: trends
       run: |
         python trends.py
-      - name: Commit files
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add --all
-          git commit -am "add data"
-          git push
+    - name: Commit files
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git add --all
+        git commit -am "add data"
+        git push
