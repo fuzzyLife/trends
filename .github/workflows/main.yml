@@ -3,9 +3,7 @@
 
 name: Python application
 
-on:
-  schedule:
-    - cron: "36 11 * * *"
+on: push
 
 permissions:
   contents: write
