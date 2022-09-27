@@ -5,10 +5,10 @@ name: Python application
 
 on:
   schedule:
-    - cron: "34 11 * * *"
+    - cron: "36 11 * * *"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
