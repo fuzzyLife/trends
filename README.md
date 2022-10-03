@@ -1,5 +1,5 @@
+![dis-ease-map](https://raw.githubusercontent.com/fuzzyLife/trends/trends/map.png)
 
-# Accessing a random verse from [Bhagavad-gītā As It Is](https://vedabase.io/en/library/bg)
 # [base](https://github.com/fuzzyLife/trends/)
 
 source:	[python](https://github.com/fuzzyLife/trends/blob/gita/trends.py)
