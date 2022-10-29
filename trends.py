@@ -4,7 +4,7 @@ pytrend = TrendReq()
 pytrend.build_payload(kw_list=["Disease"], timeframe='now 1-d')#,geo='', gprop='', cat=0) 
 # ## Related Topics 
 df_related_topics = pytrend.related_topics()['Disease']['rising']
-df_related_topics=df_related_topics[df_related_topics['topic_type'].isin(['Disorder', 'Diseases'])]
+#df_related_topics=df_related_topics[df_related_topics['topic_type'].isin(['Disorder', 'Diseases'])]
 df_related_topics=df_related_topics[['topic_title','value']]
 df_related_topics['value']=0
 # ## Related Queries
