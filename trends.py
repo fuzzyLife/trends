@@ -1,4 +1,5 @@
 #https://hackernoon.com/how-to-use-google-trends-api-with-python
+import pandas as pd
 from pytrends.request import TrendReq
 pytrend = TrendReq()
 pytrend.build_payload(kw_list=["Disease"], timeframe='now 1-d')#,geo='', gprop='', cat=0) 
@@ -9,10 +10,10 @@ df_related_topics=df_related_topics[['topic_title','value']]
 df_related_topics['value']=0
 # ## Related Queries
 df_related_queries = pytrend.related_queries()['Disease']['top']
-df=df_related_queries.append(df_related_topics,ignore_index=True)
+df=pd.concat([df_related_queries, df_related_topics], ignore_index=True)
 #merge
 df_related_topics.columns=df_related_queries.columns
-df=df_related_queries.append(df_related_topics,ignore_index=True)
+df=pd.concat([df_related_queries, df_related_topics], ignore_index=True)
 df = df.sort_values('value', ascending=True)
 df['disease'] = df['query'].str.split().str.join(' ')
 df['disease'] = df['disease'].str.lower()
